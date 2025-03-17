@@ -1,0 +1,75 @@
+user
+| POST: /user | - Добавляет нового пользователя.
+{
+ "id": 1,
+ "name": "Evgeniy Ivanov",
+ "email": "evgen228@gmail.com"
+}
+-----------------------------------
+| GET: /user/{userID} | - Находит пользователя по id.
+{
+ "id": 101,
+ "name": "Alexey Gavrilov",
+ "email": "alex111@gmail.com"
+}
+------------------------------------
+| DELETE: /user/{userID} | - Удаляет пользователя по id.
+{
+ "message": "Пользователь удален."
+}
+-------------------------------------
+| PUT: /user/{userID} | - Обновляет пользователя по id.
+Запрос:
+PUT /user/1
+{
+ "name": "Mihail Starsev"
+}
+Вывод:
+{
+ "id": 1,
+ "name": "Mihail Starsev",
+ "email": "evgen228@gmail.com"
+}
+--------------------------------------
+
+
+
+bookings
+| POST: /bookings | - Добавляет новое бронирование. 
+{
+ "id": 1,
+ "flight": 5,
+ "user": 1,
+ "bookingsStatus": "Забронированно"
+}
+---------------------------------------
+| GET: /bookings/{bookingsId} | - Находит бронирование по id.
+Запрос:
+GET /bookings/1
+Вывод:
+{
+ "id": 1,
+ "flight": 5,
+ "user": 1,
+ "bookingsStatus": "Забронированно"
+}
+---------------------------------------
+| DELETE: /bookings/{bookingsId} | - Удаляет бронирование по id.
+{
+ "message": "Бронирование удалено."
+}
+---------------------------------------
+| PUT:/bookings/{bookingsId} | - Обновляет бронирование по id.
+Запрос:
+PUT /bookings/1
+{
+ "flight": 3
+}
+Вывод:
+{
+ "id": 1,
+ "flight": 3,
+ "user": 1,
+ "bookingsStatus": "Забронированно"
+}
+
